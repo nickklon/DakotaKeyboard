@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/dakota_keyboard_view.xml -->
+<android.inputmethodservice.KeyboardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:background="@android:color/background_dark"
+    >
+    <!-- android:keyPreviewLayout="@layout/dakota_key_preview" FIXME default preview is meh for now-->
+</android.inputmethodservice.KeyboardView>

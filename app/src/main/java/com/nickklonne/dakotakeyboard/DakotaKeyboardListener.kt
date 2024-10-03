@@ -8,6 +8,7 @@ import android.view.KeyEvent
 import android.view.inputmethod.InputConnection
 import com.nickklonne.dakotakeyboard.DakotaKeyboardInputMethodService.Companion.KEYCODE_DOUBLE_SPACE
 import com.nickklonne.dakotakeyboard.DakotaKeyboardInputMethodService.Companion.KEYCODE_CAPS_LOCK
+import com.nickklonne.dakotakeyboard.DakotaKeyboardInputMethodService.Companion.KEYCODE_SHIFT_PUNCTUATION
 
 class DakotaKeyboardListener(
     private val inputConnectionSupplier: () -> InputConnection,
@@ -35,7 +36,7 @@ class DakotaKeyboardListener(
             Keyboard.KEYCODE_DELETE -> onDelete()
             Keyboard.KEYCODE_DONE -> onReturn()
             KEYCODE_DOUBLE_SPACE -> onDoubleSpace()
-            Keyboard.KEYCODE_SHIFT, KEYCODE_CAPS_LOCK -> onShift(
+            Keyboard.KEYCODE_SHIFT, KEYCODE_CAPS_LOCK, KEYCODE_SHIFT_PUNCTUATION -> onShift(
                 forceUnshift = false,
                 setCapsLock = primaryCode == KEYCODE_CAPS_LOCK
             )
@@ -83,7 +84,6 @@ class DakotaKeyboardListener(
         if (c.isLetter() && keyboardIsShifted()) {
             c = Character.toUpperCase(c)
         }
-        // FIXME: ELSE IF shift the punctuation keyboard
 
         getCurrentIC().commitText(c.toString(), 1)
 

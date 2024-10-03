@@ -13,17 +13,27 @@ import androidx.emoji2.emojipicker.EmojiPickerView
 class DakotaKeyboardInputMethodService : InputMethodService() {
 
     private var isEmojiPickerVisible = false
+    private var keyboardIsPrimary = true
+    private var keyboardPunctuationIsPrimary = true
 
     private val keyboardListener = DakotaKeyboardListener(
         inputConnectionSupplier = this::getCurrentInputConnection,
         doKeyboardShift = this::toggleShift,
         keyboardIsShifted = this::isShifted,
-        doKeyboardAlt = TODO("Boom... sorry"),
+        doKeyboardAlt = this::togglePunctuation,
         doKeyboardModeChange = this::toggleEmojiPicker,
     )
 
     private val keyboardPrimary: Keyboard by lazy {
         Keyboard(this, R.xml.dakota_keyboard_primary)
+    }
+
+    private val keyboardPunctuation: Keyboard by lazy {
+        Keyboard(this, R.xml.dakota_keyboard_punctuation_primary)
+    }
+
+    private val keyboardPunctuationSecondary: Keyboard by lazy {
+        Keyboard(this, R.xml.dakota_keyboard_punctuation_secondary)
     }
 
     @delegate:SuppressLint("InflateParams")
@@ -48,6 +58,13 @@ class DakotaKeyboardInputMethodService : InputMethodService() {
 
     private fun isShifted(): Boolean = keyboardView.isShifted
 
+    private fun togglePunctuation() {
+        val newKeyboard = if (keyboardIsPrimary) keyboardPunctuation else keyboardPrimary
+        keyboardView.setKeyboard(newKeyboard)
+        keyboardIsPrimary = !keyboardIsPrimary
+        keyboardPunctuationIsPrimary = true
+    }
+
     private fun toggleEmojiPicker() {
         val newView = if (isEmojiPickerVisible) keyboardView else emojiPickerView
         super.setInputView(newView)
@@ -55,6 +72,13 @@ class DakotaKeyboardInputMethodService : InputMethodService() {
     }
 
     private fun toggleShift(unshiftOnly: Boolean, setCapsLock: Boolean) {
+
+        if (!keyboardIsPrimary) {
+            val newKeyboard = if (keyboardPunctuationIsPrimary) keyboardPunctuationSecondary else keyboardPunctuation
+            keyboardView.setKeyboard(newKeyboard)
+            keyboardPunctuationIsPrimary = !keyboardPunctuationIsPrimary
+            return
+        }
 
         if (unshiftOnly) {
             keyboardView.setShifted(false)
@@ -76,5 +100,6 @@ class DakotaKeyboardInputMethodService : InputMethodService() {
     companion object {
         const val KEYCODE_DOUBLE_SPACE = -132
         const val KEYCODE_CAPS_LOCK = -101
+        const val KEYCODE_SHIFT_PUNCTUATION = -106
     }
 }

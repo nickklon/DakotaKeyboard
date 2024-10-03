@@ -34,7 +34,7 @@
     </Row>
     <Row>
         <!-- again with the horizontal gap -->
-        <Key android:codes="-1" android:keyLabel="⇧" android:isModifier="true" android:keyWidth="15%" android:keyEdgeFlags="left"/>
+        <Key android:codes="-1,-101" android:keyLabel="⇧" android:isModifier="true" android:isSticky="true" android:keyWidth="15%" android:keyEdgeFlags="left"/>
         <Key android:codes="122" android:keyLabel="z"/>
         <Key android:codes="120" android:keyLabel="x"/>
         <Key android:codes="99" android:keyLabel="c"/>
@@ -45,12 +45,12 @@
         <Key android:codes="-5" android:keyLabel="⌫" android:keyWidth="15%p" android:isRepeatable="true" android:keyEdgeFlags="right"/>
     </Row>
     <Row android:rowEdgeFlags="bottom">
-        <!-- KEYCODE_ALT -->
+        <!-- KEYCODE_ALT for extended punctuation-->
         <Key android:codes="-6" android:keyLabel="\?123" android:isModifier="true" android:keyWidth="15%p" android:keyEdgeFlags="left"/>
         <Key android:codes="44" android:keyLabel="," android:keyWidth="10%p"/>
-        <!-- KEYCODE MODE_CHANGE -->
+        <!-- KEYCODE MODE_CHANGE for Emoji -->
         <Key android:codes="-2" android:keyLabel="☺" android:isModifier="true" android:keyWidth="10%p"/>
-        <Key android:codes="32" android:keyLabel="SPACE" android:isRepeatable="true" android:keyWidth="40%p"/>
+        <Key android:codes="32,-132" android:keyLabel="SPACE" android:isRepeatable="true" android:keyWidth="40%p"/>
         <Key android:codes="46" android:keyLabel="." android:keyWidth="10%p"/>
         <Key android:codes="-4" android:keyLabel="⏎" android:keyWidth="15%p" android:keyEdgeFlags="right"/>
     </Row>

@@ -16,7 +16,7 @@
         <service
             android:name=".DakotaKeyboardInputMethodService"
             android:exported="true"
-            android:label="Dakota Keyboard"
+            android:label="@string/dakota_keyboard_label"
             android:permission="android.permission.BIND_INPUT_METHOD">
             <intent-filter>
                 <action android:name="android.view.InputMethod" />
@@ -25,6 +25,14 @@
                 android:name="android.view.im"
                 android:resource="@xml/method" />
         </service>
+        <!-- Optional TODO: an activity for controlling the IME settings.
+        <activity android:name="DakotaInputIMESettings"
+            android:label="@string/datkota_input_settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        -->
 
     </application>
 

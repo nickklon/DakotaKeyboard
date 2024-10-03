@@ -8,6 +8,7 @@ import android.inputmethodservice.Keyboard
 import android.inputmethodservice.KeyboardView
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.emoji2.emojipicker.EmojiPickerView
 
 class DakotaKeyboardInputMethodService : InputMethodService() {
@@ -44,17 +45,24 @@ class DakotaKeyboardInputMethodService : InputMethodService() {
         k
     }
 
-    private val emojiPickerView: EmojiPickerView by lazy {
+    private val emojiPickerView: View by lazy {
         // https://developer.android.com/develop/ui/views/text-and-emoji/emoji-picker
-        // TODO this eats the whole screen. Should be wrapped in a container to collapse anyway
-        // TODO also needs a listener
-        EmojiPickerView(this).apply { // TODO move this to a layout file
-            emojiGridColumns = 9
-            layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        (layoutInflater.inflate(R.layout.dakota_keyboard_emoji_picker, null) as ViewGroup).apply {
+            findViewById<EmojiPickerView>(R.id.emoji_picker).apply {
+                setOnEmojiPickedListener { emoji ->
+                    currentInputConnection.commitText(emoji.emoji, 1)
+                    toggleEmojiPicker() // FIXME: Currently we are a one-at-a-time emoji picker
+                }
+            }
+            findViewById<Button>(R.id.close_emoji_picker).apply {
+                setOnClickListener { toggleEmojiPicker() }
+            }
         }
     }
 
     override fun onCreateInputView(): View = keyboardView
+
+    override fun onEvaluateFullscreenMode(): Boolean = isEmojiPickerVisible
 
     private fun isShifted(): Boolean = keyboardView.isShifted
 
@@ -69,6 +77,7 @@ class DakotaKeyboardInputMethodService : InputMethodService() {
         val newView = if (isEmojiPickerVisible) keyboardView else emojiPickerView
         super.setInputView(newView)
         isEmojiPickerVisible = !isEmojiPickerVisible
+        super.updateFullscreenMode()
     }
 
     private fun toggleShift(unshiftOnly: Boolean, setCapsLock: Boolean) {

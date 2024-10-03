@@ -54,6 +54,12 @@ class DakotaKeyboardListener(
         // This IF is a hack, but only delete if the last key wasn't shift to avoid caps-lock causing
         // a delete. See KeyboardView#detectAndSendKey mInMultiTap block
         if (!lastKeyWasShift) {
+            getCurrentIC().getSelectedText(0)?.let {
+                if (it.isNotEmpty()) {
+                    getCurrentIC().commitText("", 1)
+                    return
+                }
+            }
             getCurrentIC().deleteSurroundingText(1, 0)
         }
     }

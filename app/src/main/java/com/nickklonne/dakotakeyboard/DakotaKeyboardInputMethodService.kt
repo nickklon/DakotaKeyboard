@@ -110,5 +110,6 @@ class DakotaKeyboardInputMethodService : InputMethodService() {
         const val KEYCODE_DOUBLE_SPACE = -132
         const val KEYCODE_CAPS_LOCK = -101
         const val KEYCODE_SHIFT_PUNCTUATION = -106
+        const val KEYCODE_K_DOT_ABOVE = -207
     }
 }

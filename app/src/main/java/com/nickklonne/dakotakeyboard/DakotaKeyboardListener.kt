@@ -9,6 +9,7 @@ import android.view.inputmethod.InputConnection
 import com.nickklonne.dakotakeyboard.DakotaKeyboardInputMethodService.Companion.KEYCODE_DOUBLE_SPACE
 import com.nickklonne.dakotakeyboard.DakotaKeyboardInputMethodService.Companion.KEYCODE_CAPS_LOCK
 import com.nickklonne.dakotakeyboard.DakotaKeyboardInputMethodService.Companion.KEYCODE_SHIFT_PUNCTUATION
+import com.nickklonne.dakotakeyboard.DakotaKeyboardInputMethodService.Companion.KEYCODE_K_DOT_ABOVE
 
 class DakotaKeyboardListener(
     private val inputConnectionSupplier: () -> InputConnection,
@@ -40,6 +41,7 @@ class DakotaKeyboardListener(
                 forceUnshift = false,
                 setCapsLock = primaryCode == KEYCODE_CAPS_LOCK
             )
+            KEYCODE_K_DOT_ABOVE -> "k̇".toCharArray().forEach { onEverythingElse(it.code) }
 
             else -> onEverythingElse(primaryCode)
         }

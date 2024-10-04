@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="@dimen/dakota_keyboard_key_width"
+    android:keyHeight="@dimen/dakota_keyboard_key_height"
+    android:horizontalGap="@dimen/dakota_keyboard_horizontal_gap"
+    android:verticalGap="@dimen/dakota_keyboard_vertical_gap"
+    android:keyTextColor="@android:color/primary_text_light"
+    android:keyBackground="@android:color/background_light"
+    android:layout_centerInParent="true">
+    <Row><Key android:codes="-207" android:keyLabel="k̇"/></Row>
+</Keyboard>

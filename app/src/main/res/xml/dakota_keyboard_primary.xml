@@ -11,35 +11,35 @@
     <Row>
         <Key android:codes="113" android:keyLabel="q" android:keyEdgeFlags="left"/>
         <Key android:codes="119" android:keyLabel="w"/>
-        <Key android:codes="101" android:keyLabel="e"/>
+        <Key android:codes="101" android:keyLabel="e" android:popupCharacters="é" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
         <Key android:codes="114" android:keyLabel="r"/>
-        <Key android:codes="116" android:keyLabel="t"/>
+        <Key android:codes="116" android:keyLabel="t" android:popupCharacters="ṫ" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
         <Key android:codes="121" android:keyLabel="y"/>
-        <Key android:codes="117" android:keyLabel="u"/>
-        <Key android:codes="105" android:keyLabel="i"/>
-        <Key android:codes="111" android:keyLabel="o"/>
-        <Key android:codes="112" android:keyLabel="p" android:keyEdgeFlags="right"/>
+        <Key android:codes="117" android:keyLabel="u" android:popupCharacters="ú" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
+        <Key android:codes="105" android:keyLabel="i" android:popupCharacters="í" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
+        <Key android:codes="111" android:keyLabel="o" android:popupCharacters="ó" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
+        <Key android:codes="112" android:keyLabel="p" android:popupCharacters="ṗ" android:popupKeyboard="@xml/dakota_keyboard_popup_template" android:keyEdgeFlags="right"/>
     </Row>
     <Row>
         <!-- Horizontal gap is 1/2 of 10% of parent, driven by the 10% key width -->
-        <Key android:codes="97" android:keyLabel="a" android:horizontalGap="@dimen/dakota_keyboard_key_width_half" android:keyEdgeFlags="left"/>
-        <Key android:codes="115" android:keyLabel="s"/>
+        <Key android:codes="97" android:keyLabel="a" android:popupCharacters="á" android:popupKeyboard="@xml/dakota_keyboard_popup_template" android:horizontalGap="@dimen/dakota_keyboard_key_width_half" android:keyEdgeFlags="left"/>
+        <Key android:codes="115" android:keyLabel="s" android:popupCharacters="ṡ" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
         <Key android:codes="100" android:keyLabel="d"/>
         <Key android:codes="102" android:keyLabel="f"/>
-        <Key android:codes="103" android:keyLabel="g"/>
-        <Key android:codes="104" android:keyLabel="h"/>
+        <Key android:codes="103" android:keyLabel="g" android:popupCharacters="ġ" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
+        <Key android:codes="104" android:keyLabel="h" android:popupCharacters="ḣ" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
         <Key android:codes="106" android:keyLabel="j"/>
-        <Key android:codes="107" android:keyLabel="k"/>
+        <Key android:codes="107" android:keyLabel="k" android:popupKeyboard="@xml/dakota_keyboard_popup_k"/><!-- k with dot above does not currently exist as a standalone character in Unicode, but instead is sequence of <006B, 0307> -->
         <Key android:codes="108" android:keyLabel="l" android:keyEdgeFlags="right"/>
     </Row>
     <Row>
         <Key android:codes="-1,-101" android:keyLabel="⇧" android:isModifier="true" android:isSticky="true" android:keyWidth="15%" android:keyEdgeFlags="left"/>
-        <Key android:codes="122" android:keyLabel="z"/>
+        <Key android:codes="122" android:keyLabel="z" android:popupCharacters="ż" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
         <Key android:codes="120" android:keyLabel="x"/>
-        <Key android:codes="99" android:keyLabel="c"/>
+        <Key android:codes="99" android:keyLabel="c" android:popupCharacters="ċ" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
         <Key android:codes="118" android:keyLabel="v"/>
         <Key android:codes="98" android:keyLabel="b"/>
-        <Key android:codes="110" android:keyLabel="n"/>
+        <Key android:codes="110" android:keyLabel="n" android:popupCharacters="ŋ" android:popupKeyboard="@xml/dakota_keyboard_popup_template"/>
         <Key android:codes="109" android:keyLabel="m"/>
         <Key android:codes="-5" android:keyLabel="⌫" android:keyWidth="15%p" android:isRepeatable="true" android:keyEdgeFlags="right"/>
     </Row>

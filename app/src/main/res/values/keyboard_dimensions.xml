@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dakota_keyboard_key_width">10%p</dimen> <!-- IF UPDATING, ALSO UPDATE dakota_keyboard_key_width_half -->
+    <dimen name="dakota_keyboard_key_width_half">5%p</dimen>
+    <dimen name="dakota_keyboard_key_height">60dp</dimen>
+    <dimen name="dakota_keyboard_horizontal_gap">1dp</dimen>
+    <dimen name="dakota_keyboard_vertical_gap">1dp</dimen>
+</resources>

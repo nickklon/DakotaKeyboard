@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
-    android:keyWidth="10%p"
-    android:keyHeight="60dp"
-    android:horizontalGap="1dp"
-    android:verticalGap="1dp"
+    android:keyWidth="@dimen/dakota_keyboard_key_width"
+    android:keyHeight="@dimen/dakota_keyboard_key_height"
+    android:horizontalGap="@dimen/dakota_keyboard_horizontal_gap"
+    android:verticalGap="@dimen/dakota_keyboard_vertical_gap"
     android:keyTextColor="@android:color/primary_text_light"
     android:keyBackground="@android:color/background_light"
     android:layout_centerInParent="true"
@@ -22,7 +22,7 @@
     </Row>
     <Row>
         <!-- Horizontal gap is 1/2 of 10% of parent, driven by the 10% key width -->
-        <Key android:codes="97" android:keyLabel="a" android:horizontalGap="5%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="97" android:keyLabel="a" android:horizontalGap="@dimen/dakota_keyboard_key_width_half" android:keyEdgeFlags="left"/>
         <Key android:codes="115" android:keyLabel="s"/>
         <Key android:codes="100" android:keyLabel="d"/>
         <Key android:codes="102" android:keyLabel="f"/>
@@ -33,7 +33,6 @@
         <Key android:codes="108" android:keyLabel="l" android:keyEdgeFlags="right"/>
     </Row>
     <Row>
-        <!-- again with the horizontal gap -->
         <Key android:codes="-1,-101" android:keyLabel="⇧" android:isModifier="true" android:isSticky="true" android:keyWidth="15%" android:keyEdgeFlags="left"/>
         <Key android:codes="122" android:keyLabel="z"/>
         <Key android:codes="120" android:keyLabel="x"/>

@@ -3,4 +3,12 @@
     <string name="dakota_keyboard_label">Dakota Keyboard</string>
 
     <string name="close">Close</string>
+
+    <string name="keyboardview_keycode_alt">Alt</string>
+    <string name="keyboardview_keycode_shift">Shift</string>
+    <string name="keyboardview_keycode_cancel">Cancel</string>
+    <string name="keyboardview_keycode_delete">Delete</string>
+    <string name="keyboardview_keycode_done">Done</string>
+    <string name="keyboardview_keycode_enter">Enter</string>
+    <string name="keyboardview_keycode_mode_change">Mode change</string>
 </resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <!-- https://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/core/res/res/values/attrs.xml;drc=0b6b8594ea73d75fc4fd4c76ccf181c7768a3dd1;l=8645 -->
+    <declare-styleable name="KeyboardView">
+        <!-- Default KeyboardView style.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="keyboardViewStyle" format="reference" />
+
+        <!-- Image for the key. This image needs to be a StateListDrawable, with the following
+             possible states: normal, pressed, checkable, checkable+pressed, checkable+checked,
+             checkable+checked+pressed.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="keyBackground" format="reference" />
+
+        <!-- Size of the text for character keys.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="keyTextSize" format="dimension" />
+
+        <!-- Size of the text for custom keys with some text and no icon.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="labelTextSize" format="dimension" />
+
+        <!-- Color to use for the label in a key.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="keyTextColor" format="color" />
+
+        <!-- Layout resource for key press feedback.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="keyPreviewLayout" format="reference" />
+
+        <!-- Vertical offset of the key press feedback from the key.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="keyPreviewOffset" format="dimension" />
+
+        <!-- Height of the key press feedback popup.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="keyPreviewHeight" format="dimension" />
+
+        <!-- Amount to offset the touch Y coordinate by, for bias correction.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="verticalCorrection" format="dimension" />
+
+        <!-- Layout resource for popup keyboards.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="popupLayout" format="reference" />
+
+        <!-- MODIFIED added format to shadowColor/Radius -->
+        <!-- {@deprecated Copy this definition into your own application project.} -->
+        <attr name="shadowColor" format="color" />
+        <!-- {@deprecated Copy this definition into your own application project.} -->
+        <attr name="shadowRadius" format="float"/>
+    </declare-styleable>
+
+    <!-- https://cs.android.com/android/platform/superproject/+/android14-qpr3-release:frameworks/base/core/res/res/values/attrs.xml;drc=776bb064284ae9265adee6f2c5ee1f7c707d4c8c;l=8629 -->
+    <!-- {@deprecated Copy this definition into your own application project.} -->
+    <declare-styleable name="KeyboardViewPreviewState">
+        <!-- State for {@link android.inputmethodservice.KeyboardView KeyboardView}
+                key preview background.
+             {@deprecated Copy this definition into your own application project.} -->
+        <attr name="state_long_pressable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="Theme">
+
+        <!-- https://cs.android.com/android/platform/superproject/+/android14-qpr3-release:frameworks/base/core/res/res/values/attrs.xml;drc=776bb064284ae9265adee6f2c5ee1f7c707d4c8c;l=85 -->
+        <attr name="backgroundDimAmount" format="float" />
+
+    </declare-styleable>
+
+</resources>

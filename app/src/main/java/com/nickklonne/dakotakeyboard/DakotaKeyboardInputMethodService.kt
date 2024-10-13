@@ -1,5 +1,3 @@
-@file:Suppress("DEPRECATION") // FIXME replace deprecated methods
-
 package com.nickklonne.dakotakeyboard
 
 import android.annotation.SuppressLint
